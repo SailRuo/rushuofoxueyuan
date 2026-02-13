@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如说修行 - 网站结构图</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-12 text-gray-800">如说修行网上佛学院 - 网站结构</h1>
+        
+        <!-- 主入口 -->
+        <div class="flex justify-center mb-12">
+            <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-xl p-6 text-center">
+                <h2 class="text-2xl font-bold mb-2">离线阅读.html</h2>
+                <p class="text-sm">主入口页面</p>
+                <p class="text-xs mt-2 opacity-80">www.cfolu.com</p>
+            </div>
+        </div>
+
+        <!-- 三个箭头 -->
+        <div class="flex justify-center mb-8">
+            <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+
+        <!-- 三大板块 -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <!-- 净修院 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-green-500">
+                <div class="bg-green-50 p-6">
+                    <h3 class="text-2xl font-bold text-green-700 mb-2">净修院</h3>
+                    <p class="text-sm text-gray-600">index.htm</p>
+                    <p class="text-green-600 font-semibold mt-2">念佛往生，一心不乱</p>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold mb-3 text-gray-700">四个学期</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">1.</span>
+                            <div>
+                                <div class="font-semibold">培养目标</div>
+                                <div class="text-gray-500 text-xs">地藏经、了凡四训...</div>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">2.</span>
+                            <div>
+                                <div class="font-semibold">以戒为师</div>
+                                <div class="text-gray-500 text-xs">四十二章经...</div>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">3.</span>
+                            <div>
+                                <div class="font-semibold">解行并进</div>
+                                <div class="text-gray-500 text-xs">金刚经、心经...</div>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">4.</span>
+                            <div>
+                                <div class="font-semibold">以证为归</div>
+                                <div class="text-gray-500 text-xs">阿弥陀经、念佛论...</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="mt-4 pt-4 border-t">
+                        <div class="text-xs text-gray-500">约 30 篇课程</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 禅修院 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-blue-500">
+                <div class="bg-blue-50 p-6">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">禅修院</h3>
+                    <p class="text-sm text-gray-600">index-chan.htm</p>
+                    <p class="text-blue-600 font-semibold mt-2">明心见性，顿悟成佛</p>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold mb-3 text-gray-700">四个学期</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">1.</span>
+                            <div>
+                                <div class="font-semibold">培养目标</div>
+                                <div class="text-gray-500 text-xs">地藏经、了凡四训...</div>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">2.</span>
+                            <div>
+                                <div class="font-semibold">以戒为师</div>
+                                <div class="text-gray-500 text-xs">四十二章经...</div>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">3.</span>
+                            <div>
+                                <div class="font-semibold">解行并进</div>
+                                <div class="text-gray-500 text-xs">金刚经、心经...</div>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">4.</span>
+                            <div>
+                                <div class="font-semibold">见性等持</div>
+                                <div class="text-gray-500 text-xs">二入四行论、修心诀...</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="mt-4 pt-4 border-t">
+                        <div class="text-xs text-gray-500">约 30 篇课程</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 修学园地 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-orange-500">
+                <div class="bg-orange-50 p-6">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-2">修学园地</h3>
+                    <p class="text-sm text-gray-600">xiuxueyd/index.htm</p>
+                    <p class="text-orange-600 font-semibold mt-2">实修实证，解行并进</p>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold mb-3 text-gray-700">综合资料库</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <span>自在学佛</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <span>本愿法门系列</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <span>善导大师系列</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <span>禅修指导</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <span>念佛实践</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <span>经典注解</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-orange-500 mr-2">•</span>
+                            <span>音频朗读</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 pt-4 border-t">
+                        <div class="text-xs text-gray-500">290+ 篇文章</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 互联关系 -->
+        <div class="bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg p-8 mb-12">
+            <h3 class="text-2xl font-bold text-center mb-6 text-gray-800">板块互联</h3>
+            <div class="flex justify-center items-center space-x-8">
+                <div class="text-center">
+                    <div class="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mb-2">
+                        净修院
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                    </svg>
+                </div>
+                <div class="text-center">
+                    <div class="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mb-2">
+                        禅修院
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                    </svg>
+                </div>
+                <div class="text-center">
+                    <div class="w-24 h-24 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mb-2">
+                        修学园地
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 mt-6">每个板块都可以直接跳转到其他两个板块</p>
+        </div>
+
+        <!-- 统计信息 -->
+        <div class="grid md:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white rounded-lg shadow p-6 text-center">
+                <div class="text-4xl font-bold text-purple-600 mb-2">604</div>
+                <div class="text-gray-600">HTML 文件</div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6 text-center">
+                <div class="text-4xl font-bold text-green-600 mb-2">313</div>
+                <div class="text-gray-600">成功解析</div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6 text-center">
+                <div class="text-4xl font-bold text-blue-600 mb-2">3</div>
+                <div class="text-gray-600">主要板块</div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6 text-center">
+                <div class="text-4xl font-bold text-orange-600 mb-2">211MB</div>
+                <div class="text-gray-600">项目大小</div>
+            </div>
+        </div>
+
+        <!-- 学习路径 -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+            <h3 class="text-2xl font-bold mb-6 text-gray-800">用户学习路径</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h4 class="font-bold text-green-700 mb-2">路径一：系统学习</h4>
+                    <p class="text-sm text-gray-600">选择净修院或禅修院，按四个学期顺序学习</p>
+                </div>
+                <div class="border-l-4 border-orange-500 pl-4">
+                    <h4 class="font-bold text-orange-700 mb-2">路径二：主题学习</h4>
+                    <p class="text-sm text-gray-600">在修学园地按主题浏览，自由选择感兴趣的内容</p>
+                </div>
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h4 class="font-bold text-blue-700 mb-2">路径三：交叉学习</h4>
+                    <p class="text-sm text-gray-600">在三个板块之间自由切换，综合学习</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文档链接 -->
+        <div class="mt-12 text-center">
+            <a href="SITE_STRUCTURE.md" class="inline-block bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition">
+                查看详细结构文档
+            </a>
+        </div>
+    </div>
+</body>
+</html>

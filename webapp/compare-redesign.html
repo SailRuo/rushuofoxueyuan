@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计对比 - 如说修行网上佛学院</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .version {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .version h2 {
+            margin-bottom: 1rem;
+            color: #4F46E5;
+        }
+        
+        .version iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        
+        .features {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .features h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .feature-card {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #4F46E5;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: #4F46E5;
+            font-size: 1.1rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .comparison-table td:first-child {
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .badge-old {
+            background: #e0e0e0;
+            color: #666;
+        }
+        
+        .badge-new {
+            background: #22C55E;
+            color: white;
+        }
+        
+        .badge-improved {
+            background: #4F46E5;
+            color: white;
+        }
+        
+        .links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 200ms ease;
+        }
+        
+        .btn-primary {
+            background: #4F46E5;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #4338CA;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #4F46E5;
+            border: 2px solid #4F46E5;
+        }
+        
+        .btn-secondary:hover {
+            background: #EEF2FF;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .version iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 如说修行网上佛学院 - 设计对比</h1>
+        
+        <div class="comparison">
+            <div class="version">
+                <h2>
+                    旧版设计 
+                    <span class="badge badge-old">V1</span>
+                </h2>
+                <iframe src="index-new.html" title="旧版设计"></iframe>
+            </div>
+            
+            <div class="version">
+                <h2>
+                    重新设计 
+                    <span class="badge badge-new">V2</span>
+                </h2>
+                <iframe src="index-redesign.html" title="重新设计"></iframe>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>✨ 核心改进</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🏗️ 统一架构</h3>
+                    <p>从三个独立页面整合为单页应用，无缝切换三大板块（净修院、禅修院、修学园地）</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🎨 专业设计</h3>
+                    <p>基于 UI/UX Pro Max 设计系统，采用 AI-Native UI 风格，现代化视觉体验</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🔍 智能搜索</h3>
+                    <p>300ms 防抖优化，支持标题和全文搜索，自动切换到结果板块</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📱 完全响应式</h3>
+                    <p>支持 375px、768px、1024px、1440px 四个断点，移动优先设计</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>♿ 无障碍优化</h3>
+                    <p>完整 ARIA 标签，键盘导航支持，WCAG AA 对比度标准</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>⚡ 性能优化</h3>
+                    <p>懒加载内容，搜索防抖，平滑滚动，资源优化</p>
+                </div>
+            </div>
+            
+            <h2 style="margin-top: 2rem;">📊 详细对比</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>维度</th>
+                        <th>旧版 (V1)</th>
+                        <th>新版 (V2)</th>
+                        <th>改进</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>架构</td>
+                        <td>三个独立页面</td>
+                        <td>统一单页应用</td>
+                        <td><span class="badge badge-improved">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td>导航</td>
+                        <td>页面跳转</td>
+                        <td>标签切换 + 固定导航</td>
+                        <td><span class="badge badge-improved">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td>设计系统</td>
+                        <td>通用蓝色主题</td>
+                        <td>UI/UX Pro Max 专业系统</td>
+                        <td><span class="badge badge-improved">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td>字体</td>
+                        <td>系统字体</td>
+                        <td>Noto Serif/Sans SC</td>
+                        <td><span class="badge badge-improved">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td>搜索</td>
+                        <td>基础搜索</td>
+                        <td>防抖 + 智能过滤</td>
+                        <td><span class="badge badge-improved">⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td>响应式</td>
+                        <td>3 个断点</td>
+                        <td>4 个断点 + 移动优先</td>
+                        <td><span class="badge badge-improved">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td>无障碍</td>
+                        <td>基础支持</td>
+                        <td>WCAG AA 完整支持</td>
+                        <td><span class="badge badge-improved">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td>对比度</td>
+                        <td>4.5:1</td>
+                        <td>8.2:1 - 10.5:1</td>
+                        <td><span class="badge badge-improved">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td>性能</td>
+                        <td>良好</td>
+                        <td>优秀（懒加载 + 防抖）</td>
+                        <td><span class="badge badge-improved">⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td>交互反馈</td>
+                        <td>基础</td>
+                        <td>完整（悬停 + 焦点 + 键盘）</td>
+                        <td><span class="badge badge-improved">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="links">
+            <a href="index-new.html" class="btn btn-secondary" target="_blank">
+                查看旧版
+            </a>
+            <a href="index-redesign.html" class="btn btn-primary" target="_blank">
+                查看新版
+            </a>
+            <a href="REDESIGN-V2.md" class="btn btn-secondary" target="_blank">
+                设计文档
+            </a>
+        </div>
+    </div>
+</body>
+</html>

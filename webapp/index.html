@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如说修行 - 在线学习平台</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>如说修行</h1>
+            <p class="subtitle">在线学习平台</p>
+            <nav>
+                <a href="#" data-category="all" class="active">全部</a>
+                <a href="#" data-category="佛学">佛学</a>
+                <a href="#" data-category="道学">道学</a>
+                <a href="#" data-category="哲学">哲学</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 搜索框 -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="搜索文章内容...">
+            <button id="searchBtn">搜索</button>
+        </div>
+
+        <!-- 文章列表 -->
+        <div id="articleList" class="article-grid">
+            <!-- 动态加载 -->
+        </div>
+
+        <!-- 文章详情 -->
+        <div id="articleDetail" class="article-detail hidden">
+            <button id="backBtn" class="back-btn">← 返回</button>
+            <article id="articleContent"></article>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 如说修行 | 弘扬传统文化</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

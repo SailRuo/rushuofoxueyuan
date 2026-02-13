@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怎样学佛 - 如说修行网上佛学院</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .author {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .motto {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .motto p {
+            margin-bottom: 0.5rem;
+        }
+
+        .content {
+            padding: 3rem 2rem;
+        }
+
+        .toc {
+            background: #f0fdf4;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .toc h3 {
+            font-family: 'Noto Serif SC', serif;
+            color: #059669;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .toc-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+            color: #059669;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .toc-link:hover {
+            background: #059669;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8rem;
+            color: #059669;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #10b981;
+        }
+
+        .section-content {
+            color: #374151;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .section-content p {
+            margin-bottom: 1.2rem;
+            text-indent: 2em;
+        }
+
+        .highlight {
+            color: #059669;
+            font-weight: 600;
+        }
+
+        .quote {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #065f46;
+            text-indent: 0 !important;
+        }
+
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 0.95rem;
+        }
+
+        .course-table th {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid #059669;
+        }
+
+        .course-table td {
+            padding: 0.75rem 0.5rem;
+            border: 1px solid #d1d5db;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .course-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .semester-header {
+            background-color: #f3f4f6;
+            font-weight: 600;
+            color: #059669;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .course-table {
+                font-size: 0.85rem;
+            }
+
+            .course-table th,
+            .course-table td {
+                padding: 0.6rem 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>怎样学佛</h1>
+            <p class="author">智钰</p>
+            <div class="motto">
+                <p><strong>学佛就是修行，而且是如佛所说地修行。</strong></p>
+                <p><strong>今生目标：了生死，度众生。</strong></p>
+                <p><strong>其修也，有从入之阶；其证也，有自得之实。</strong></p>
+                <p><strong>佛言："虽一世勤苦，须臾之间，后生无量寿国，快乐无极。"</strong></p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="toc">
+                <h3>目录</h3>
+                <div class="toc-list">
+                    <a href="#section1" class="toc-link">一、发菩提心</a>
+                    <a href="#section2" class="toc-link">二、正确知见</a>
+                    <a href="#section3" class="toc-link">三、解行并进</a>
+                    <a href="#section4" class="toc-link">四、出离三界</a>
+                </div>
+            </div>
+
+            <p style="text-indent: 2em; margin-bottom: 2rem; color: #374151; font-size: 1.05rem;">学佛的目的是：上求佛道，下化众生。这，也是每一个学佛人的伟大使命。那么，怎样来达到这一目的，完成这一使命呢？</p>
+
+            <div class="section" id="section1">
+                <h2 class="section-title">一、发菩提心</h2>
+                <div class="section-content">
+                    <p>学佛，首先必须发菩提心，因为发菩提心是成佛度众生这一伟大使命的庄严誓言，是横渡生死苦海的灯塔，是乘风破浪的动力。</p>
+                    
+                    <p>彻悟大师云：<span class="highlight">"大心（菩提心）不发，则外不能感通诸佛，内不能契合本性；上不能圆成佛道，下不能广利群生。无始恩爱，何以解脱？无始冤愆，何以解释？积劫罪业，难以忏除。积劫善根，难已成熟。随所修行，多诸障缘。纵有所成，终堕偏小。故须称性发大菩提心也。"</span>（《彻悟大师遗集》）</p>
+
+                    <p>省庵大师《劝发菩提心文》云：<span class="highlight">"入道要门，发心为首；修行急务，立愿居先。愿立，则众生可度；心发，则佛道堪成。苟不发广大心，立坚固愿，则纵经尘劫，依然还在轮回；虽有修行，总是徒劳辛苦。故《华严经》云：'忘失菩提心，修诸善法，是名魔业。'忘失尚尔（忘失菩提心尚且如此），况未发乎（更何况还没有发菩提心呢）！故知欲学如来乘，必先具发菩萨愿，不可缓也。"</span></p>
+
+                    <p>彭际清《省庵法师遗书序》云：<span class="highlight">"昔我世尊始成正觉，叹曰：'奇哉！奇哉！无一众生而不具有如来智慧。但以妄想、颠倒、执著，不能证得。若离妄想，一切智、自然智、无碍智则得现前。'吾壹不解（我一直不理解）此诸众生于妄想执著，何苦而不离？于如来智慧，又何惮（畏难）而不证？卒（终于）乃舍父逃逝，长劫漂流，甘为客作贱人，而不知反此？无他故，不觉而已矣！菩提心者，即觉之异名。才觉，则现前妄想执著，全是如来智慧。盖如来智慧无体，以众生妄想为体；众生妄想无体，以如来智慧为体。如水成波，全波是水。从本以来，毕竟当住无余涅故。然而觉与不觉之分，断不可以自瞒自昧者也。于此瞿然而思，砉（皮骨相离声）然以解，则菩提心之发，自有沛然莫御者。此心既发，一切智、自然智、无碍智现前，又何用他求哉！"</span></p>
+                </div>
+            </div>
+
+            <div class="section" id="section2">
+                <h2 class="section-title">二、正确知见</h2>
+                <div class="section-content">
+                    <p>虚云老和尚说：<span class="highlight">"修行无别修，只要识路头，路头若识得，生死一起休。"</span>《楞严经》云：<span class="highlight">"因地不真，果招迂曲。"</span>因此，学佛人具备正确知见，至关重要。如说修行网上佛学院的课程安排，就是通过系统的修学，以建立正确的知见，并且落实在行持上。</p>
+
+                    <p>如说修行网上佛学院的网址是：<a href="http://www.cfolu.com/" target="_blank" style="color: #059669; font-weight: 600;">www.cfolu.com</a></p>
+
+                    <p>其修学共分四个阶段：一、断恶行善；二、持戒为本；三、般若破妄；四、极乐为归。培养的目标是：发菩提心，解第一义，信愿持名，一心不乱；牢牢掌握佛法基本理论，具备直接阅读经论原文的能力，为弘法利生打下坚实的基础。学院的具体课程如下表：</p>
+
+                    <table class="course-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">一、断恶行善</th>
+                                <th style="width: 25%;">二、持戒为本</th>
+                                <th style="width: 25%;">三、般若破妄</th>
+                                <th style="width: 25%;">四、极乐为归</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="semester-header">
+                                <td>第一学年</td>
+                                <td>第二学年</td>
+                                <td>第三、四学年</td>
+                                <td>第五、六学年</td>
+                            </tr>
+                            <tr>
+                                <td>地藏菩萨本愿经</td>
+                                <td>佛说四十二章经</td>
+                                <td>金刚经</td>
+                                <td>称赞净土佛摄受经</td>
+                            </tr>
+                            <tr>
+                                <td>了凡四训</td>
+                                <td>八大人觉经</td>
+                                <td>心经</td>
+                                <td>念佛论</td>
+                            </tr>
+                            <tr>
+                                <td>俞净意公遇灶神记</td>
+                                <td>佛遗教经</td>
+                                <td>六祖坛经</td>
+                                <td>修心要旨</td>
+                            </tr>
+                            <tr>
+                                <td>了凡四训嘉言录</td>
+                                <td>十善业道经</td>
+                                <td>金刚经选注</td>
+                                <td>圆觉经</td>
+                            </tr>
+                            <tr>
+                                <td>因应篇</td>
+                                <td>四念住经</td>
+                                <td>永嘉直说</td>
+                                <td>大势至菩萨念佛圆通章</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section" id="section3">
+                <h2 class="section-title">三、解行并进</h2>
+                <div class="section-content">
+                    <p>学佛是一个转凡为圣、转迷为悟、转识成智的过程。因此无论何时，学佛最终都要落实到持戒修行上，将所学转化为行动。</p>
+
+                    <p>学佛的方法是：<span class="highlight">闻→思→修</span>。即：听闻佛法，阅读经典；思维，即思维佛法之义理；修，是按照佛法之义理，落实到实践中。通过这一过程，我们的闻思所得的知见，转化为正确知见，进而落实到行动中，转化为我们的行为。在学习过程中，熏习是非常重要的，只有通过不断的熏习，才能将闻思所得的知见，变成自己的正确见解，指导自己的行动。</p>
+
+                    <p>一般来说，学习一门课程时，需要将课程分成若干个单元，分五个步骤来学习：</p>
+
+                    <div class="quote">
+                        <p><strong>1.</strong> 粗读。也就是说，先读一遍单元的教材段落，建立一个整体的认识，大致知道这个单元的经文讲的是什么。</p>
+                        <p><strong>2.</strong> 细读。仔细阅读每一段，每一句，写出心得体会，对本单元的主要思想，重点段落、句子都要能够背诵。</p>
+                        <p><strong>3.</strong> 精读。反复通读，能够背诵重要的经句，并且能够理解这个单元，特别是对难的句子的部分。</p>
+                        <p><strong>4.</strong> 全面融会贯通。主要任务是：写出全面的心得体会，能够将教材段落融会贯通。</p>
+                        <p><strong>5.</strong> 熏习。通过不断的熏习，将闻思所得的知见，变成自己的正确见解，指导自己的行动。这一步是非常重要的，要时时刻刻在熏习中。看经、转经、听经、讲经。</p>
+                    </div>
+
+                    <p>对于初学者而言，直接从经论原文入手是相当困难的，那么，注释本就是必须的。但是，有了一定基础之后，就要直接阅读经论原文，不要依赖于注释本的解释。在学习注释本的时候，也要有意识地培养直接阅读经论原文的能力。如说修行网上佛学院的教材，就是这样编排的，既有经论的注释，同时又有直接阅读佛经的原文的内容。教材如下表所示：</p>
+
+                    <table class="course-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">一、断恶行善</th>
+                                <th style="width: 25%;">二、持戒为本</th>
+                                <th style="width: 25%;">三、般若破妄</th>
+                                <th style="width: 25%;">四、极乐为归</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="semester-header">
+                                <td>第一学年</td>
+                                <td>第二学年</td>
+                                <td>第三、四学年</td>
+                                <td>第五、六学年</td>
+                            </tr>
+                            <tr>
+                                <td>地藏菩萨本愿经白话解</td>
+                                <td>佛说四十二章经注</td>
+                                <td>金刚经讲义</td>
+                                <td>称赞净土佛摄受经注</td>
+                            </tr>
+                            <tr>
+                                <td>了凡四训注释</td>
+                                <td>八大人觉经注</td>
+                                <td>心经讲义</td>
+                                <td>念佛论</td>
+                            </tr>
+                            <tr>
+                                <td>俞净意公遇灶神记注释</td>
+                                <td>佛遗教经注</td>
+                                <td>六祖坛经讲义</td>
+                                <td>修心要旨</td>
+                            </tr>
+                            <tr>
+                                <td>了凡四训嘉言录</td>
+                                <td>十善业道经注</td>
+                                <td>金刚经选注</td>
+                                <td>大势至菩萨念佛圆通章讲义</td>
+                            </tr>
+                            <tr>
+                                <td>因应篇注释</td>
+                                <td>四念住经注</td>
+                                <td>永嘉直说讲义</td>
+                                <td>大乘起信论讲义</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section" id="section4">
+                <h2 class="section-title">四、出离三界</h2>
+                <div class="section-content">
+                    <p>印光大师说：<span class="highlight">"敦伦尽分，闲邪存诚，诸恶莫作，众善奉行，真为生死，发菩提心，以深信愿，持佛名号。"</span>因此，讲经说法，说车、说马、说牛、说羊，都是为了让人上车、上马、上牛、上羊。最重要的是要自己上车、上马、上牛、上羊。</p>
+
+                    <p>三界——欲界、色界、无色界。欲界，指有食欲、色欲、睡眠欲的众生所住的世界；色界，指无食欲、色欲、睡眠欲，但还有色身的众生所住的世界；无色界，指连色身也没有，只有识的众生所住的世界。</p>
+
+                    <p>那么，怎样才能出离三界呢？答案是：<span class="highlight">念佛往生极乐世界</span>。念佛往生极乐世界，就是出离三界的最好方法。</p>
+
+                    <p>一般来说，念佛往生极乐世界，需要具备信愿行三资粮。只要具足信愿行，临命终时，必蒙阿弥陀佛接引往生极乐世界。《楞严经》说：<span class="highlight">"都摄六根，净念相继，得三摩地，斯为第一。"</span></p>
+
+                    <p>念佛法门，别无奇特，只深信力行为要耳。佛云：若人但念弥陀佛，是名无上深妙禅。</p>
+
+                    <div class="quote">
+                        <p><strong>问：</strong>谁能往生？</p>
+                        <p><strong>答：</strong>念佛的人都能往生。念佛的人，就是指发菩提心，一向专念阿弥陀佛名号的人。</p>
+                    </div>
+
+                    <p style="text-indent: 0; margin-top: 2rem; padding: 1.5rem; background: #f0fdf4; border-radius: 8px; border-left: 4px solid #10b981;">
+                        <strong>参考阅读：</strong><br>
+                        • 净宗入门<br>
+                        • 佛说阿弥陀经注<br>
+                        • 往生的条件<br>
+                        • 临终十念相续
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="index-redesign.html" class="back-link">返回首页</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
