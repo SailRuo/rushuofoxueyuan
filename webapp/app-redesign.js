@@ -14,51 +14,51 @@ const courseData = {
         color: '#4F46E5',
         semesters: [
             {
-                number: '第一学期',
-                title: '培养目标',
+                number: '第一学年',
+                title: '一、断恶行善',
                 goal: '建立正确知见',
                 courses: [
-                    { title: '地藏菩萨本愿经讲录', file: '201_42.html' },
-                    { title: '了凡四训注释', file: '102lfsx.html' },
-                    { title: '俞净意公遇灶神记注释', file: '103yjy.html' },
+                    { title: '地藏菩萨本愿经', file: '201_42.html' },
+                    { title: '了凡四训', file: '102lfsx.html' },
+                    { title: '俞净意公遇灶神记', file: '103yjy.html' },
                     { title: '王凤仪嘉言录', file: '105wangfengyijiayanlu.html' },
-                    { title: '太上感应篇注释', file: '104ganyingp.html' }
+                    { title: '感应篇', file: '104ganyingp.html' }
                 ]
             },
             {
-                number: '第二学期',
-                title: '以戒为师',
+                number: '第二学年',
+                title: '二、持戒为本',
                 goal: '持戒修行',
                 courses: [
-                    { title: '四十二章经注', file: '201_42.html' },
-                    { title: '八大人觉经注', file: '202bada.html' },
-                    { title: '佛遗教经注', file: '203foyj.html' },
-                    { title: '十善业道经注', file: '204ssydj.html' },
-                    { title: '大舍住经注', file: '204danian.html' }
+                    { title: '佛说四十二章经', file: '201_42.html' },
+                    { title: '八大人觉经', file: '202bada.html' },
+                    { title: '佛遗教经', file: '203foyj.html' },
+                    { title: '十善业道经', file: '204ssydj.html' },
+                    { title: '大念住经', file: '204danian.html' }
                 ]
             },
             {
-                number: '第三学期',
-                title: '解行并进',
+                number: '第三、四学年',
+                title: '三、般若破妄',
                 goal: '理论与实践结合',
                 courses: [
-                    { title: '金刚经精解', file: '301jgj.html' },
-                    { title: '心经精解', file: '302xinj.html' },
-                    { title: '六祖坛经精解', file: '303liuzutanjing.html' },
-                    { title: '佛藏经选注', file: '304fozangj.html' },
-                    { title: '起信论注', file: '502zhenxinzhishuojingjie.html' }
+                    { title: '金刚经', file: '301jgj.html' },
+                    { title: '心经', file: '302xinj.html' },
+                    { title: '六祖坛经', file: '303liuzutanjing.html' },
+                    { title: '佛藏经', file: '304fozangj.html' },
+                    { title: '真心直说', file: '502zhenxinzhishuojingjie.html' }
                 ]
             },
             {
-                number: '第四学期',
-                title: '极乐为归',
+                number: '第五、六学年',
+                title: '四、极乐为归',
                 goal: '念佛往生',
                 courses: [
-                    { title: '称赞净土佛摄受经注', file: 'xiuxueyd/056chengzanjingtujingzhu.html' },
+                    { title: '阿弥陀经', file: '401amtj.html' },
                     { title: '念佛论', file: '402nianfolun.html' },
                     { title: '禅净要旨', file: '403chanjing.html' },
                     { title: '无量寿经会义', file: 'xiuxueyd/239wuliangshoujing-huiyi.html' },
-                    { title: '普导流', file: '404nianfosanmei.html' }
+                    { title: '念佛三昧摸象记', file: '404nianfosanmei.html' }
                 ]
             }
         ]
@@ -69,51 +69,51 @@ const courseData = {
         color: '#D97706',
         semesters: [
             {
-                number: '第一学期',
-                title: '培养目标',
+                number: '第一学年',
+                title: '一、断恶行善',
                 goal: '发菩提心',
                 courses: [
-                    { title: '地藏菩萨本愿经讲录', file: '201_42.html' },
-                    { title: '了凡四训注释', file: '102lfsx.html' },
-                    { title: '俞净意公遇灶神记注释', file: '103yjy.html' },
+                    { title: '地藏菩萨本愿经', file: '201_42.html' },
+                    { title: '了凡四训', file: '102lfsx.html' },
+                    { title: '俞净意公遇灶神记', file: '103yjy.html' },
                     { title: '王凤仪嘉言录', file: '105wangfengyijiayanlu.html' },
-                    { title: '太上感应篇注释', file: '104ganyingp.html' }
+                    { title: '感应篇', file: '104ganyingp.html' }
                 ]
             },
             {
-                number: '第二学期',
-                title: '持戒为本',
+                number: '第二学年',
+                title: '二、持戒为本',
                 goal: '戒定慧',
                 courses: [
-                    { title: '四十二章经注', file: '201_42.html' },
-                    { title: '八大人觉经注', file: '202bada.html' },
-                    { title: '佛遗教经注', file: '203foyj.html' },
-                    { title: '十善业道经注', file: '204ssydj.html' },
-                    { title: '大舍住经注', file: '204danian.html' }
+                    { title: '佛说四十二章经', file: '201_42.html' },
+                    { title: '八大人觉经', file: '202bada.html' },
+                    { title: '佛遗教经', file: '203foyj.html' },
+                    { title: '十善业道经', file: '204ssydj.html' },
+                    { title: '大念住经', file: '204danian.html' }
                 ]
             },
             {
-                number: '第三学期',
-                title: '般若破妄',
+                number: '第三、四学年',
+                title: '三、般若破妄',
                 goal: '禅修实践',
                 courses: [
-                    { title: '金刚经精解', file: '301jgj.html' },
-                    { title: '心经精解', file: '302xinj.html' },
-                    { title: '六祖坛经精解', file: '303liuzutanjing.html' },
+                    { title: '金刚经', file: '301jgj.html' },
+                    { title: '心经', file: '302xinj.html' },
+                    { title: '六祖坛经', file: '303liuzutanjing.html' },
                     { title: '佛藏经选注', file: '304fozangj.html' },
-                    { title: '起信论注', file: '502zhenxinzhishuojingjie.html' }
+                    { title: '真心直说', file: '502zhenxinzhishuojingjie.html' }
                 ]
             },
             {
-                number: '第四学期',
-                title: '定慧等持',
+                number: '第五、六学年',
+                title: '四、定慧等持',
                 goal: '明心见性',
                 courses: [
-                    { title: '二入四行论精解', file: 'xiuxueyd/011errusx.html' },
-                    { title: '修心诀精解', file: '502xiuxinjue.html' },
-                    { title: '白云心要（观心宝鉴）', file: '002baiyunxy.html' },
+                    { title: '二入四行论', file: 'xiuxueyd/011errusx.html' },
+                    { title: '修心诀', file: '502xiuxinjue.html' },
+                    { title: '白云心要（观心宝笈）', file: '002baiyunxy.html' },
                     { title: '禅净要旨', file: '403chanjing.html' },
-                    { title: '圆觉经精解', file: '502yuanjuejingjj.html' }
+                    { title: '圆觉经', file: '502yuanjuejingjj.html' }
                 ]
             }
         ]
