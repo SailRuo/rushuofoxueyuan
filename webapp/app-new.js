@@ -14,7 +14,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 // 加载文章数据
 async function loadArticles() {
     try {
-        const response = await fetch('articles.json');
+        const response = await fetch('articles-index.json');
+        if (!response.ok) {
+            throw new Error('Failed to load articles');
+        }
         articles = await response.json();
         console.log(`✓ 加载了 ${articles.length} 篇文章`);
     } catch (error) {

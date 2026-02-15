@@ -14,39 +14,47 @@ document.addEventListener('DOMContentLoaded', async () => {
 // 加载文章数据
 async function loadArticles() {
     try {
-        const response = await fetch('articles.json');
+        // 尝试fetch
+        const response = await fetch('articles-index.json');
         articles = await response.json();
         console.log(`加载了 ${articles.length} 篇文章`);
     } catch (error) {
-        console.error('加载文章失败:', error);
-        // 使用示例数据
-        articles = getDemoArticles();
+        console.log('fetch失败,尝试XMLHttpRequest:', error.message);
+        
+        // 尝试XMLHttpRequest(支持file://协议)
+        try {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'articles-index.json', false);
+            xhr.send();
+            if (xhr.status === 200 || xhr.status === 0) {
+                articles = JSON.parse(xhr.responseText);
+                console.log(`通过XMLHttpRequest加载了 ${articles.length} 篇文章`);
+            }
+        } catch (e) {
+            console.error('XMLHttpRequest也失败:', e);
+            articles = [];
+        }
     }
 }
 
 // 构建搜索索引
 function buildSearchIndex() {
     searchIndex = articles.map((article, index) => {
-        const content = article.paragraphs
-            .map(p => p.text)
-            .join(' ')
-            .toLowerCase();
+        const content = `${article.title} ${article.summary} ${article.sections.join(' ')}`.toLowerCase();
         
         return {
             index,
             title: article.title.toLowerCase(),
             content,
-            category: getCategoryFromFile(article.file)
+            category: article.category
         };
     });
 }
 
 // 从文件路径推断分类
 function getCategoryFromFile(file) {
-    if (file.includes('chan') || file.includes('禅')) return '佛学';
-    if (file.includes('jingtu') || file.includes('净土')) return '佛学';
-    if (file.includes('dao') || file.includes('道')) return '道学';
-    return '佛学'; // 默认
+    // 现在从索引中直接获取
+    return 'all';
 }
 
 // 渲染文章列表
@@ -54,38 +62,34 @@ function renderArticles(filteredArticles = null) {
     const articleList = document.getElementById('articleList');
     const articlesToRender = filteredArticles || articles;
     
-    articleList.innerHTML = articlesToRender.map((article, index) => {
-        const category = getCategoryFromFile(article.file);
-        const excerpt = article.paragraphs
-            .slice(0, 3)
-            .map(p => p.text)
-            .join('')
-            .substring(0, 100) + '...';
+    if (articlesToRender.length === 0) {
+        articleList.innerHTML = '<p style="text-align: center; color: #64748B; padding: 4rem;">暂无文章</p>';
+        return;
+    }
+    
+    articleList.innerHTML = articlesToRender.map((article) => {
+        const summary = article.summary 
+            ? (article.summary.length > 100 ? article.summary.substring(0, 100) + '...' : article.summary)
+            : '点击查看详情...';
         
         return `
-            <div class="article-card" data-index="${index}">
-                <span class="category">${category}</span>
+            <div class="article-card" onclick="window.location.href='article.html?id=${article.id}'">
+                <span class="category">${article.category}</span>
                 <h3>${article.title}</h3>
-                <p class="excerpt">${excerpt}</p>
+                <p class="excerpt">${summary}</p>
+                ${article.tags && article.tags.length > 0 ? 
+                    `<div class="tags">${article.tags.slice(0, 3).map(tag => `<span class="tag">${tag}</span>`).join('')}</div>` : 
+                    ''}
             </div>
         `;
     }).join('');
-    
-    // 添加点击事件
-    document.querySelectorAll('.article-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const index = parseInt(card.dataset.index);
-            showArticle(index);
-        });
-    });
 }
 
-// 显示文章详情
+// 显示文章详情(已废弃,使用article.html)
 function showArticle(index) {
     const article = articles[index];
-    const articleList = document.getElementById('articleList');
-    const articleDetail = document.getElementById('articleDetail');
-    const articleContent = document.getElementById('articleContent');
+    window.location.href = `article.html?id=${article.id}`;
+}
     
     // 渲染文章内容（保留原有颜色）
     const content = `

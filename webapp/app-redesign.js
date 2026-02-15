@@ -224,9 +224,9 @@ function performSearch(query) {
     const lowerQuery = query.toLowerCase();
     const filtered = articlesData.filter(article => 
         article.title.toLowerCase().includes(lowerQuery) ||
-        (article.paragraphs && article.paragraphs.some(p => 
-            p.text && p.text.toLowerCase().includes(lowerQuery)
-        ))
+        (article.summary && article.summary.toLowerCase().includes(lowerQuery)) ||
+        (article.sections && article.sections.some(s => s.toLowerCase().includes(lowerQuery))) ||
+        (article.tags && article.tags.some(t => t.toLowerCase().includes(lowerQuery)))
     );
     
     if (currentSection === 'xiuxue') {
@@ -241,7 +241,7 @@ function performSearch(query) {
 // 加载文章数据
 async function loadArticles() {
     try {
-        const response = await fetch('articles.json');
+        const response = await fetch('articles-index.json');
         if (!response.ok) {
             throw new Error('Failed to load articles');
         }
@@ -268,23 +268,25 @@ function renderArticles(articles = null) {
     }
     
     const html = data.map((article, index) => `
-        <article class="article-card" onclick="showArticle(${index})" role="button" tabindex="0">
+        <article class="article-card" onclick="openArticle('${article.id}')" role="button" tabindex="0">
             <h3 class="article-title">${article.title || '无标题'}</h3>
             <div class="article-meta">
-                <span class="article-tag">${getCategoryFromFile(article.file)}</span>
-                ${article.paragraphs ? `<span class="article-tag">${article.paragraphs.length} 段</span>` : ''}
+                <span class="article-tag">${article.category || '修学园地'}</span>
+                ${article.sections && article.sections.length > 0 ? `<span class="article-tag">${article.sections.length} 章节</span>` : ''}
+                ${article.tags && article.tags.length > 0 ? `<span class="article-tag">${article.tags.slice(0, 2).join(', ')}</span>` : ''}
             </div>
+            ${article.summary ? `<p class="article-summary">${article.summary.substring(0, 100)}...</p>` : ''}
         </article>
     `).join('');
     
     container.innerHTML = html;
     
     // 添加键盘导航
-    document.querySelectorAll('.article-card').forEach((card, index) => {
+    document.querySelectorAll('.article-card').forEach((card) => {
         card.addEventListener('keypress', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                showArticle(index);
+                card.click();
             }
         });
     });
@@ -308,6 +310,11 @@ function getCategoryFromFile(file) {
         return '净土';
     }
     return '佛学';
+}
+
+// 打开文章页面
+function openArticle(articleId) {
+    window.location.href = `article.html?id=${articleId}`;
 }
 
 // 显示文章详情
