@@ -1,0 +1,164 @@
+/* 现代禅意风格全局样式表 */
+:root {
+  --bg-color: #FDFBF7; /* 宣纸色 */
+  --primary-color: #8C2C2C; /* 檀木红 */
+  --secondary-color: #3D5A45; /* 墨绿 */
+  --text-main: #2C2C2C; /* 深灰 */
+  --text-muted: #5F5F5F;
+  --card-bg: #FFFFFF;
+  --border-color: #E5E1D8;
+  --accent-gold: #B8860B;
+  
+  --font-serif: "Noto Serif SC", "Source Han Serif CN", "思源宋体", serif;
+  --font-sans: "Inter", "Noto Sans SC", sans-serif;
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-size: clamp(16px, 0.7vw + 14px, 18px);
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* 卡片容器 */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* 标题样式 */
+h1, h2, h3 {
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 2rem; }
+h2 { font-size: 1.8rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+
+/* 导航样式 */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background-color: rgba(61, 90, 69, 0.05);
+  color: var(--primary-color);
+}
+
+/* 课程表格优化 */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.course-card {
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-gold);
+}
+
+.course-card a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+th, td {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+th {
+  background: rgba(140, 44, 44, 0.04);
+  color: var(--primary-color);
+  font-weight: 600;
+  text-align: left;
+}
+
+tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+/* 列表链接 */
+.link-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.link-list li {
+  padding: 0.5rem;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.link-list a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.link-list a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+  .card { padding: 1.5rem; }
+  h1 { font-size: 1.8rem; }
+  nav { flex-direction: column; align-items: center; gap: 0.5rem; }
+}

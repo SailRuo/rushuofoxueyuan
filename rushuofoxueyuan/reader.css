@@ -1,0 +1,159 @@
+:root {
+  --reader-bg: #FDFBF7;
+  --reader-surface: #FFFFFF;
+  --reader-text: #2C2C2C;
+  --reader-muted: #5F5F5F;
+  --reader-border: #E5E1D8;
+  --reader-primary: #8C2C2C;
+  --reader-link: #3D5A45;
+  --reader-link-hover: #8C2C2C;
+
+  --reader-font-serif: "Noto Serif SC", "Source Han Serif CN", "思源宋体", "宋体", serif;
+  --reader-font-sans: "Inter", "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+
+  --reader-max-width: none;
+}
+
+html {
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--reader-bg) !important;
+  color: var(--reader-text) !important;
+  font-family: var(--reader-font-serif) !important;
+  font-size: clamp(17px, 0.8vw + 15px, 19px);
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--reader-link) !important;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--reader-link-hover) !important;
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+  color: var(--reader-primary) !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+p {
+  margin: 0.85rem 0;
+  font-size: 1rem;
+}
+
+pre {
+  font-family: var(--reader-font-sans);
+  font-size: 0.9em;
+  line-height: 1.6;
+  color: var(--reader-text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: rgba(0, 0, 0, 0.03);
+  border: none;
+  border-radius: 0;
+  padding: 1rem;
+  overflow: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+  兼容旧文章页结构：
+  BODY -> CENTER -> TABLE -> TR -> TD
+  把最外层 TABLE 当作“阅读卡片容器”。
+*/
+center {
+  display: block;
+  padding: 0;
+}
+
+body > center > table {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  background: var(--reader-surface) !important;
+  border: none !important;
+  border-radius: 0;
+  box-shadow: none;
+  border-collapse: separate !important;
+  border-spacing: 0;
+  padding: 10px;
+}
+
+/* 旧页面内经常嵌套很多表格且写死 WIDTH=710 等属性，这里统一让其跟随容器铺满 */
+body > center table {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* 只去掉最外层表格的边框，保留内嵌表格（如课程表）的边框 */
+body > center > table {
+  border: none !important;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+}
+
+/* 覆盖 HTML 的 cellpadding 属性，但保留内容留白 */
+body > center > table > tbody > tr > td,
+body > center > table > tr > td {
+  padding: 20px !important;
+}
+
+body > center {
+  min-height: 100vh;
+}
+
+/* 小屏适配 */
+@media (max-width: 640px) {
+  center {
+    padding: 0;
+  }
+
+  body > center > table > tbody > tr > td,
+  body > center > table > tr > td {
+    padding: 20px !important;
+  }
+
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.2rem; }
+}
+
+/* 尽量弱化旧版 font 标签的“像素风” */
+font {
+  font-family: inherit !important;
+  font-size: inherit !important;
+}
+
+/* 旧 CSS 经常写 TD P，保证其可读性 */
+TD P {
+  line-height: 1.9 !important;
+  color: var(--reader-text) !important;
+}
+
+/* 导航那行常见绿色链接，统一一下视觉 */
+body > center a[style*="color"] {
+  color: var(--reader-link) !important;
+}
